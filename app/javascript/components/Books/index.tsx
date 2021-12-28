@@ -20,6 +20,9 @@ const booksQuery = gql`
     allBooks {
       id
       title
+      author {
+        name
+      }
     }
   }
 `
@@ -30,6 +33,7 @@ const CustomHeader = () => {
       <TableRow>
         <TableCell>ID</TableCell>
         <TableCell>Title</TableCell>
+        <TableCell>Author</TableCell>
       </TableRow>
     </TableHead>
   )
@@ -66,6 +70,7 @@ const Books = () => {
                 >
                   <TableCell>{row.id}</TableCell>
                   <TableCell>{row.title}</TableCell>
+                  <TableCell>{row.author?.name}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
