@@ -11,6 +11,10 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useState, useEffect } from 'react';
 
+interface EnhancedTableProps {
+  books: any;
+}
+
 const booksQuery = gql`
   query someBooks {
     allBooks {
@@ -19,6 +23,18 @@ const booksQuery = gql`
     }
   }
 `
+
+const CustomHeader = () => {
+  return(
+    <TableHead>
+      <TableRow>
+        <TableCell>ID</TableCell>
+        <TableCell>Title</TableCell>
+      </TableRow>
+    </TableHead>
+  )
+}
+
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
   { field: 'title', headerName: 'Book Title', width: 80 }
@@ -40,12 +56,8 @@ const Books = () => {
         <h1>Books</h1>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell>ID</TableCell>
-                <TableCell>Title</TableCell>
-              </TableRow>
-            </TableHead>
+            <CustomHeader 
+            />
             <TableBody>
               {rows?.map((row) => (
                 <TableRow

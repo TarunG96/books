@@ -7,6 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-10.times do |i|
-    Book.create(title: "Book #{i}")
+20.times do |i|
+  author = Author.create(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    age: rand(30..80)
+  )
+
+  20.times do |j|
+    author.books.create(
+      title: Faker::Beer.name
+    )
+  end
+
 end
