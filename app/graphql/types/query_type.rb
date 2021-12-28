@@ -4,9 +4,9 @@ module Types
     include GraphQL::Types::Relay::HasNodeField
     include GraphQL::Types::Relay::HasNodesField
 
-    field :books, [Types::BookType], null: false
+    field :all_books, [Types::BookType], null: false
     
-    def books
+    def all_books
       Book.all
     end
   end

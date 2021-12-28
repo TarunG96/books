@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 
 const Book = (book) => {
   return(
-    <h2>{ book.title }</h2>
+    <li>{ book.title }</li>
   )
 }
 
