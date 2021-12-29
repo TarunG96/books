@@ -21,10 +21,10 @@ const saveAuthor = gql`
   }
 `
 
-const newAuthor = ({history}) => {
+const newAuthor = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [age, setAge] = useState();
+  const [age, setAge] = useState(0);
   const [redirect, setRedirect] = useState(false);
   const [mutateFunction, { data, loading, error }] = useMutation(saveAuthor);
 
