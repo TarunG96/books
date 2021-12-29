@@ -54,6 +54,7 @@ const Authors = () => {
     return (
       <div>
         <h1>Authors</h1>
+        <Link to={`/authors/new`}>Create New Author</Link>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <CustomHeader 
